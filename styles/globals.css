@@ -1,0 +1,516 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    scroll-behavior: smooth;
+}
+* {
+    font-family: 'Playfair Display', serif;
+    --main-color: #4c423a;
+    --hover-nav-color: #c1955d;
+    --hover-background-nav: #f9f3ed;
+    --paragraph-color: rgba(77, 66, 58, 0.76);
+    --social-nav-color: #dcb676;
+    --border-color: rgba(77, 65, 57, 0.11);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@layer base {
+    body {
+        @apply tracking-tight
+    }
+
+    a {
+        @apply no-underline block
+    }
+
+    li {
+        @apply list-none
+    }
+}
+
+.home {
+    background-image: url(../public/assets/bg-header.png);
+    background-size: cover;
+    background-attachment: fixed scroll;
+}
+
+.home .read-link:hover svg {
+    color: white;
+}
+
+.active {
+    color: var(--hover-nav-color);
+}
+
+.row a {
+    position: relative;
+    overflow: hidden;
+}
+
+.row a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: -100%;
+    background-color: var(--hover-nav-color);
+}
+
+.row a:hover {
+    color: var(--hover-nav-color);
+}
+
+.row a:hover::after {
+    left: 0;
+    transition: .4s;
+}
+
+.col a:hover {
+    background-color: var(--hover-background-nav);
+    color: var(--hover-nav-color);
+}
+
+.carousel>div {
+    animation: Left 12s ease infinite;
+}
+
+@keyframes Left {
+    0% {
+        left: 0%;
+    }
+
+    50% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+.menu {
+    background-color: #f9f3ed;
+}
+
+.main-heading h3 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--hover-nav-color);
+    font-size: clamp(1.7rem, 8vw, 3rem);
+}
+
+.main-heading h1 {
+    font-size: clamp(3rem, 8vw, 10rem);
+    color: var(--main-color);
+}
+
+.main-heading p {
+    max-width: 667px;
+    color: var(--paragraph-color);
+    font-size: clamp(1.3rem, 4vw, 1.4rem);
+}
+
+.main-heading a {
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.main-heading a:hover {
+    background-color: var(--main-color);
+    color: white;
+    transition: .3s;
+}
+
+/* start product section */
+
+.product {
+    background-color: #f9f3ed;
+    color: var(--main-color);
+    background-image: url(../public/assets/bg-product.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.product h4 {
+    font-size: clamp(1.6rem, 8vw, 1.8rem);
+}
+
+/* start section1  */
+
+.section1 {
+    background-image: url(../public/assets/bg-03.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.section1 h2 {
+    font-size: clamp(2.24rem, 8vw, 3.8rem);
+    line-height: clamp(2rem, 7vw, 4rem);
+}
+
+.section1 a {
+    border: 1px solid white;
+    display: block;
+    width: fit-content;
+}
+
+.section1 a:hover {
+    background-color: var(--main-color);
+}
+
+/* start review section */
+
+.review {
+    background-image: url(../public/assets/bg-01.png);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: var(--hover-background-nav);
+}
+
+.review > div {
+    padding: 9% 6.5%;
+}
+
+.review .heading h2 {
+    font-size: clamp(2.24rem, 8vw, 3.8rem);
+    line-height: clamp(2rem, 7vw, 4rem);
+    color: var(--main-color);
+}
+
+.review .heading p {
+    font-family: 'Great Vibes', cursive;
+    color: var(--hover-nav-color);
+    font-size: clamp(1.23rem, 4vw, 2.25rem);
+}
+
+.review .opinion svg {
+    width: 18px;
+    color: var(--hover-nav-color);
+}
+
+.review .opinion p {
+    color: var(--paragraph-color);
+}
+
+.review .opinion span {
+    color: var(--paragraph-color);
+}
+
+/* start Mwanted */
+
+.wanted {
+    padding-inline: 6.5%;
+    padding-bottom: 9%;
+    background-image: url(../public/assets/bg-wanted.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--hover-background-nav);
+}
+
+.wanted .heading {
+    border-top: 1px solid var(--main-color);
+    padding-top: 1.7rem;
+}
+
+.wanted .heading h2 {
+    font-size: clamp(2.24rem, 8vw, 3.8rem);
+    line-height: clamp(2rem, 7vw, 4rem);
+    color: var(--main-color);
+}
+
+.wanted .heading a {
+    font-family: 'Great Vibes', cursive;
+    color: var(--hover-nav-color);
+    font-size: clamp(1.25rem, 7vw, 2.2rem);
+}
+
+.wanted .discription {
+    color: var(--main-color);
+}
+
+.wanted .discription p {
+    color: var(--paragraph-color);
+}
+
+/* start section2  */
+
+.section2>div:first-child {
+    height: clamp(65vh, 59vw, 141vh);
+    background-image: url(../public/assets/bg-05.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.section2 .sec1 {
+    height: 100%;
+    background-image: url(../public/assets/bg-06.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.section2>div:nth-child(2) p {
+    font-family: 'Great Vibes', cursive;
+}
+
+.section2>div:nth-child(2) h3 {
+    color: var(--hover-nav-color);
+}
+
+/* end section2 */
+
+/* start footer section */
+footer {
+    background-image: url(../public/assets/bg-header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--hover-background-nav);
+    padding: 9% 6% 0px;
+}
+
+footer h3 {
+    color: var(--paragraph-color);
+
+}
+footer p:nth-of-type(3){
+    color: var(--paragraph-color);
+}
+
+footer input[type="text"],
+footer input[type="submit"] {
+    padding: .6rem;
+}
+
+footer input[type="text"] {
+    border: 1px solid var(--border-color);
+}
+
+footer input[type="submit"] {
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+}
+
+footer input[type="submit"]:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+footer nav a {
+    color: var(--main-color);
+    width: fit-content;
+}
+
+footer nav a.active {
+    color: var(--hover-nav-color);
+}
+
+footer nav a:hover {
+    color: var(--hover-nav-color);
+    transition: .3s;
+}
+
+footer .social {
+    border: none;
+}
+
+footer .social svg {
+    width: 20px;
+    height: 20px;
+}
+
+footer .social a {
+    background-color: var(--hover-nav-color);
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+footer .social a:hover {
+    background-color: var(--social-nav-color);
+}
+
+footer p {
+    color: var(--paragraph-color);
+}
+
+/* end footer section */
+/* start menu page */
+.Menu-Page .heading p {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(1.37rem, 4vw, 2rem);
+    color: var(--hover-nav-color);
+}
+
+.Menu-Page .heading h1 {
+    font-size: clamp(40px, 7vw, 100px);
+    color: var(--main-color);
+}
+
+.Menu-Page .All-products {
+    color: var(--main-color);
+    cursor: pointer;
+    padding: 9% 6%;
+}
+
+.Menu-Page .All-products div>div:hover h6,
+.Menu-Page .All-products div>div:hover span {
+    color: var(--hover-nav-color);
+}
+
+.Menu-Page .All-products p {
+    color: var(--paragraph-color);
+}
+
+.Menu-Page .All-products div div:nth-child(2) * {
+    margin-bottom: 1em;
+}
+
+.Menu-Page .heading p {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(1.37rem, 4vw, 2rem);
+    color: var(--hover-nav-color);
+}
+
+.Menu-Page .heading h1 {
+    font-size: clamp(40px, 7vw, 100px);
+}
+
+/* end menu page */
+
+/* about page */
+.about {
+    padding: 0% 6%;
+}
+
+.about .first-img h3 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--main-color);
+}
+
+.about .first-img p {
+    color: var(--paragraph-color);
+}
+
+.about .second h4,
+.about .second h6 {
+    color: var(--main-color);
+}
+
+.about .second p {
+    color: var(--paragraph-color);
+}
+
+/* end about page */
+/* start history page */
+
+.history {
+    padding: 35px 50px;
+}
+
+.history::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: -28px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 14px solid;
+    border-color: transparent white transparent transparent;
+}
+
+.history h4 {
+    color: var(--main-color);
+}
+
+.history p {
+    color: var(--paragraph-color);
+}
+
+.v-line {
+    background-color: var(--border-color);
+}
+
+/* end history page */
+
+/* message page section */
+.message h3 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--main-color);
+}
+
+.message .title {
+    color: var(--paragraph-color);
+}
+
+.message .title::after {
+    content: '*';
+    position: absolute;
+    top: 40%;
+    padding-left: .2rem;
+    transform: translateY(-40%);
+    color: var(--hover-nav-color);
+}
+
+.message input[type="text"],
+.message textarea {
+    border: 1px solid var(--border-color);
+    padding: 0.74rem 10px;
+    outline: none;
+}
+
+.message input[type="submit"] {
+    border: 1px solid var(--main-color);
+    padding: 7px 24px;
+    color: var(--main-color);
+}
+
+.message input[type="submit"]:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.message input:focus {
+    border-color: var(--hover-nav-color);
+}
+
+.message .error {
+    color: red;
+    font-size: .89rem;
+    display: block;
+}
+
+.message svg {
+    color: var(--hover-nav-color);
+}
+
+.message ul li {
+    border-bottom: 1px dotted var(--main-color);
+    padding-bottom: .4rem;
+    color: var(--main-color);
+}
+
+.message ul li a {
+    color: var(--main-color);
+}
+
+.message ul li a:hover {
+    color: var(--hover-nav-color);
+    transition: .4s;
+}
+
+.message h6 {
+    color: var(--main-color);
+}
+
+.message .closed {
+    color: var(--hover-nav-color);
+}
+
+/* end message section */
